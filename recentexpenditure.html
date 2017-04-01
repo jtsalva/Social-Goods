@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Social Good | Recent Expenditure</title>
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
-        <link rel="stylesheet" type="text/css" href="css/main.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    </head>
-    <body>
-        <div class="header">
-            <h1 class="title">Social Good | Recent Expenditure<span class="name">Roar Rah</span></h1>
-        </div>
-        <div class="app">
-            <table id="expenditures">
-                <tr>
-                    <th>Date (dd/mm/yyyy)</th>
-                    <th>Description</th>
-                    <th>Withdrawals (£)</th>
-                    <th>Deposits (£)</th>
-                    <th>Balance (£)</th>
-                    <th>Use (0 - 10)</th>                    
-                </tr>
-                <tr>
-                    <td>27/07/2008</td>
-                    <td>Chocolate Candy Magic</td>
-                    <td>400</td>
-                    <td></td>
-                    <td attribute="-">650</td>
-                    <td attribute="att3">
-                        <select>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Social Good | Recent Expenditure</title>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    
+    <script src="js/app/app.js"></script>
+    <script src="js/app/dataService.js"></script>
+    <script src="js/app/expenditureController.js"></script>
+</head>
+
+<body ng-app="socialgoodhack">
+    <div class="header">
+        <h1 class="title">Social Good | Recent Expenditure<span class="name">Roar Rah</span></h1>
+    </div>
+    <div class="app" ng-controller="expenditureController">
+        <h3>Balance</h3>
+        <table id="expenditures">
+            <tr>
+                <th>Date (dd/mm/yyyy)</th>
+                <th>Description</th>
+                <th>Withdrawals (£)</th>
+                <th>Deposits (£)</th>
+                <th>Balance (£)</th>
+                <th>Use (0 - 10)</th>
+            </tr>
+            <tr ng-repeat="item in transactions">
+                <td>{{item.details.completed | date}}</td>
+                <td>{{item.details.description}}</td>
+                <td ng-class="{green: item.details.value.amount < -100}"><span ng-if="item.details.value.amount < 0">{{item.details.value.amount | makePositive}}</span></td>
+                <td ng-class="{red: item.details.value.amount > 100}"><span ng-if="item.details.value.amount > 0">{{item.details.value.amount}}</span></td>
+                <td>{{item.details.new_balance.amount | number : 2}}</td>
+                <td attribute="att3">
+                    <select>
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -40,33 +48,13 @@
                             <option value="8">8</option>
                             <option value="9">9</option>
                             <option value="10">10</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>29/07/2008</td>
-                    <td>Funds</td>
-                    <td></td>
-                    <td>90</td>
-                    <td attribute="+">740</td>
-                    <td attribute="att10">
-                        <select>
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </td>
-                </tr>
-            </table>
-        </div>
+                     </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
     <script src="js/anim.js"></script>
-    </body>
+</body>
+
 </html>

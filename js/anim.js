@@ -1,4 +1,21 @@
+console.log("Confirmed Load");
+
+// Rate Colour Change
+$(document).on("click", "#expenditures td:nth-child(6)" ,  function() {
+    console.log("Received");
+    console.log($(this).children("select").val());
+    if ((parseInt($(this).children("select").val()) < 4)) {
+        $(this).css("border-right", "10px solid red");
+    } else if ((parseInt($(this).children("select").val()) < 7)) {
+        $(this).css("border-right", "10px solid orange");
+    } else {
+        $(this).css("border-right", "10px solid green");
+    }
+})
+
 $(document).ready(function() {
+
+    colorRates();
 
     // Menu Item Animation
     $(".menu-main-item").hover(function() {
@@ -16,5 +33,33 @@ $(document).ready(function() {
         window.location.href = link;
     });
 
-
 })
+
+function colorRates() {
+    $("#expenditures tr td select").each(function() {
+        if ((parseInt($(this).val()) < 4)) {
+            $(this).parent().css("border-right", "10px solid red");
+        } else if ((parseInt($(this).val()) < 7)) {
+            $(this).parent().css("border-right", "10px solid orange");
+        } else {
+            $(this).parent().css("border-right", "10px solid green");
+        }
+    })
+}
+
+function randomNumberFromRange(min,max)
+{
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
+
+function setRates() {
+    var selects = $("#expenditures tr td select");
+
+    selects.forEach(function (item, index) {
+        item.children(randomNumberFromRange(0,10)).prop("selected", true);
+    })
+}
+
+
+setRates();
+console.log("Re");
