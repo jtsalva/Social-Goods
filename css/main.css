@@ -30,6 +30,11 @@ body {
     padding: 30px 30px;
 }
 
+.app {
+    margin-top: 80px;
+    padding: 30px 30px;
+}
+
 .menu-main-row {
     padding-bottom: 10px;
 }
@@ -54,4 +59,34 @@ body {
 
 .menu-main-row .menu-main-item p {
     color: #0066FF;
+}
+
+table {
+    border-spacing: 0;
+    text-align: left;
+    position: relative;
+    max-width: 848px;
+}
+
+table td, th {
+    border: 1px solid black;
+    padding: 6px 6px;
+}
+
+table td[attribute="-"] {
+    border-right: 10px solid red;
+}
+table td[attribute="+"] {
+    border-right: 10px solid green;
+}
+
+table td[attribute="att3"] {
+    border-right: 10px solid orange;
+}
+table td[attribute="att10"] {
+    border-right: 10px solid green;
+}
+
+select {
+    border: 1px solid white;
 }
