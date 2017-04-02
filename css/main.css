@@ -21,7 +21,10 @@ body {
 }
 
 .header .title .name {
+    margin-top: 5px;
+    position: absolute;
     font-size: 60%;
+    right: 20px;
     margin-left: 60%;
 }
 
