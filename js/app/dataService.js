@@ -3316,10 +3316,14 @@
     var initialDeposit = 500;
 
     var processData = function (data) {
-        angular.forEach(data, function (value, key) {
-            initialDeposit = initialDeposit - value.details.value.amount;
-            value.details.new_balance.amount = initialDeposit;
-        })
+        for (var i = data.length - 1; i >= 0; i--) {
+            initialDeposit += parseFloat(data[i].details.value.amount);
+            data[i].details.new_balance.amount = initialDeposit;
+        }
+        // angular.forEach(data, function (value, key) {
+        //     initialDeposit = initialDeposit - value.details.value.amount;
+        //     value.details.new_balance.amount = initialDeposit;
+        // })
     }
 
     return {

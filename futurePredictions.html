@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Social Good | Recent Expenditure</title>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <link ref="stylesheet" type="text/css" href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+    
+    <script src="js/app/app.js"></script>
+    <script src="js/app/dataService.js"></script>
+    <script src="js/app/futurePredictionsController.js"></script>
+</head>
+
+<body ng-app="socialgoodhack">
+    <div class="header">
+        <h1 class="title">Social Good | Future Predictions<span class="name">Roar Rah</span></h1>
+    </div>
+    <div class="row" ng-controller="futurePredictionsController"> 
+        <div>
+            <h2>Add new regular expense</h2>
+            <input type="currency" placeholder="Enter amount" ng-model="amount"/>
+            <input type="currency" placeholder="Enter frequency" ng-model="frequency"/>
+            <input type="button" class="btn btn-info" value="Add" ng-click="add()">
+
+        </div>
+        <div>
+            <h2>Regular expenses:</h2>
+            <ul>
+                <li ng-repeat="item in expenses">Amount: £{{item.Amount}} - Frequency: {{item.Frequency}}</li>
+            </ul>
+        </div>
+        <div>
+            <h2>Available balance after reccurring expenses:</h2>
+            <p>{{availableBalance}}</p>
+        </div>
+    </div>
+</body>

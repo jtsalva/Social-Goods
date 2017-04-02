@@ -19,21 +19,21 @@
         <h1 class="title">Social Good | Recent Expenditure<span class="name">Roar Rah</span></h1>
     </div>
     <div class="app" ng-controller="expenditureController">
-        <h3>Balance</h3>
+        <h3>Current Balance: £{{transactions[0].details.new_balance.amount}}</h3>
         <table id="expenditures">
             <tr>
                 <th>Date (dd/mm/yyyy)</th>
                 <th>Description</th>
                 <th>Withdrawals (£)</th>
                 <th>Deposits (£)</th>
-                <th>Balance (£)</th>
+                <th>New Balance (£)</th>
                 <th>Use (0 - 10)</th>
             </tr>
             <tr ng-repeat="item in transactions">
                 <td>{{item.details.completed | date}}</td>
                 <td>{{item.details.description}}</td>
-                <td ng-class="{green: item.details.value.amount < -100}"><span ng-if="item.details.value.amount < 0">{{item.details.value.amount | makePositive}}</span></td>
-                <td ng-class="{red: item.details.value.amount > 100}"><span ng-if="item.details.value.amount > 0">{{item.details.value.amount}}</span></td>
+                <td ng-class="{red: item.details.value.amount < -100}"><span ng-if="item.details.value.amount < 0">{{item.details.value.amount | makePositive}}</span></td>
+                <td ng-class="{green: item.details.value.amount > 100}"><span ng-if="item.details.value.amount > 0">{{item.details.value.amount}}</span></td>
                 <td>{{item.details.new_balance.amount | number : 2}}</td>
                 <td attribute="att3">
                     <select>

@@ -55,11 +55,17 @@ function randomNumberFromRange(min,max)
 function setRates() {
     var selects = $("#expenditures tr td select");
 
-    selects.forEach(function (item, index) {
-        item.children(randomNumberFromRange(0,10)).prop("selected", true);
-    })
+    for (var i = 0; i < selects.length; i++) {
+        // Iterate over numeric indexes from 0 to 5, as everyone expects.
+        selects[i].children[randomNumberFromRange(0,10)].selected = true;
+    }
+
+    // selects.forEach(function (item, index) {
+    //     item.children(randomNumberFromRange(0,10)).prop("selected", true);
+    // })
 }
 
 
-setRates();
+ setTimeout(setRates, 3000);
+ setTimeout(colorRates, 3000);
 console.log("Re");
