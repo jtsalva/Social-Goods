@@ -3393,12 +3393,65 @@ items.sort(function(first, second) {
 
 var sortedItems = items.slice(0, habits.length);
 
-var a = {};
+
+console.log(sortedItems);
+console.log(sortedItems[0][0]);
+
+var label = [];
+var total = [];
+var data = [];
 
 sortedItems.forEach(function(element) {
     $("#habits").append("<tr><td>" +
     element[0] + "</td><td>" +
     element[1] + "</td></tr>");
-    a[element[0]] = element[1];
-
+    data.push({
+        "label": element[0],
+        "total": element[1]
+    });
 }, this);
+
+for(var j = 0; j < data.length; j++) {
+    label.push(data[j].label);
+    total.push(data[j].total);
+    console.log(label[j]);
+}
+
+var ctx = document.getElementById('mycanvas');
+var mycanvas = new Chart(ctx, {
+    label: 'category',
+    type: 'pie',
+        data: {
+        labels: label,
+        datasets: [{
+            backgroundColor: [  'rgba(176, 23, 31, 0.2)',
+                                'rgba(255, 62, 150, 0.2)',
+                                'rgba(75, 0, 130, 0.2)',
+                                'rgba(100, 200, 35, 0.2)',
+                                'rgba(0, 0, 255, 0.2)',
+                                'rgba(28, 134, 238, 0.2)',
+                                'rgba(0, 191, 255, 0.2)',
+                                'rgba(0, 201, 87, 0.2)',
+                                'rgba(255, 255, 0, 0.2)',
+                                'rgba(238, 134, 0, 0.2)',
+                                'rgba(139, 69, 19, 0.2)',
+                                'rgba(139, 62, 47, 0.2)'],
+            borderColor: ['rgba(176, 23, 31, 1)',
+                            'rgba(255, 62, 150, 1)',
+                            'rgba(75, 0, 130, 1)',
+                            'rgba(100, 200, 35, 1)',
+                            'rgba(0, 0, 255, 1)',
+                            'rgba(28, 134, 238, 1)',
+                            'rgba(0, 191, 255, 1)',
+                            'rgba(0, 201, 87, 1)',
+                            'rgba(255, 255, 0, 1)',
+                            'rgba(238, 134, 0, 1)',
+                            'rgba(139, 69, 19, 1)',
+                            'rgba(139, 62, 47, 1)'],
+            borderWidth: 1,
+            data: total
+        }]},
+        options: {
+            responsive: false,
+        }
+    });
