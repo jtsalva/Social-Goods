@@ -28,7 +28,7 @@ $(document).ready(function() {
 
     // Menu Item Action
     $(".menu-main-item").click(function() {
-        const link = $(this).children("h2").text().replace(/\s/g,'').toLowerCase() + ".html";
+        const link = $(this).children("h2").text().replace(/\s/g,'').replace(/\W/g, '').toLowerCase() + ".html";
         console.log(link);
         window.location.href = link;
     });
