@@ -25,6 +25,10 @@ body {
     margin-left: 60%;
 }
 
+.header a {
+    text-decoration: none;
+}
+
 .menu-main {
     margin-top: 80px;
     padding: 30px 30px;
