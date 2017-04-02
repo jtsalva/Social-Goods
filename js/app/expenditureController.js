@@ -16,6 +16,6 @@
 
     }
 
-    var app = angular.module("socialgoodhack");
+    var app = angular.module("socialgoodhack"); 
     app.controller("expenditureController", expenditureController);
 })();
