@@ -19,7 +19,7 @@
         <h1 class="title"><a href="index.html">Social Good | Recent Expenditure</a><span class="name">Roar Rah</span></h1>
     </div>
     <div class="app" ng-controller="expenditureController">
-        <h3>Current Balance: £{{transactions[0].details.new_balance.amount}}</h3>
+        <h3>Current Balance: £{{transactions[0].details.new_balance.amount | number: 2}}</h3>
         <table id="expenditures">
             <tr>
                 <th>Date (dd/mm/yyyy)</th>
