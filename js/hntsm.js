@@ -3435,7 +3435,7 @@ var mycanvas = new Chart(ctx, {
                                 'rgba(255, 255, 0, 0.2)',
                                 'rgba(238, 134, 0, 0.2)',
                                 'rgba(139, 69, 19, 0.2)',
-                                'rgba(139, 62, 47, 0.2)'],
+                                'rgba(200, 62, 47, 0.2)'],
             borderColor: [  'rgba(255, 23, 31, 1)',
                             'rgba(255, 62, 150, 1)',
                             'rgba(75, 0, 130, 1)',
@@ -3447,7 +3447,7 @@ var mycanvas = new Chart(ctx, {
                             'rgba(255, 255, 0, 1)',
                             'rgba(238, 134, 0, 1)',
                             'rgba(139, 69, 19, 1)',
-                            'rgba(139, 62, 47, 1)'],
+                            'rgba(200, 62, 47, 1)'],
             borderWidth: 1,
             data: total
         }]},
