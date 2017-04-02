@@ -27,6 +27,7 @@ body {
 
 .header a {
     text-decoration: none;
+    color: white;
 }
 
 .menu-main {
@@ -123,4 +124,58 @@ select {
 .app.hntsm table {
     display: inline-block;
     padding-left: 5px;
+}
+
+#available-balance {
+    border-left: 10px solid #0066FF;
+    padding-left: 40px;
+    font-weight: bold;
+    font-size: 250%;
+    display: inline-block;
+}
+
+#available-balance:hover {
+    border-left: 10px solid #0056AF;
+    background-color: #0066FF;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
+
+#re-add-btn {
+    color: white;
+    font-weight: bold;
+    border: 4px solid white;
+    padding: 7px 7px;
+    background-color: #0066FF;
+}
+
+#re-add-btn:hover {
+    color: #0066FF;
+    border: 4px solid #0066FF;
+    background-color: white;
+    cursor: pointer;
+}
+
+.re-input {
+    padding: 7px 7px;
+}
+
+.re-item {
+    margin-top: 5px;
+    display: block;
+    width: 250px;
+    border: 4px solid #0066FF;
+    padding: 7px 7px;
+    list-style-type: none;
+}
+
+.re-item:hover {
+    cursor: pointer;
+    background-color: #0066FF;
+    color: white;
+}
+
+.sgh {
+    margin-left: 150px;
 }
