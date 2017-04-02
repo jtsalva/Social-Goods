@@ -1,0 +1,131 @@
+body {
+    font-family: 'Lato';
+}
+
+.header {
+    position: absolute;
+    background-color: #0066FF;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 80px;
+}
+
+.header .title {
+    color: white;
+    font-weight: bold;
+    font-size: 180%;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 100%;
+}
+
+.header .title .name {
+    font-size: 60%;
+    margin-left: 60%;
+}
+
+.title a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu-main {
+    margin-top: 80px;
+    padding: 30px 30px;
+}
+
+.app {
+    margin-top: 80px;
+    padding: 30px 30px;
+}
+
+.menu-main-row {
+    padding-bottom: 10px;
+}
+
+.menu-main-row .menu-main-item {
+    min-width: 30%;
+    vertical-align: top;
+    display: inline-block;
+    padding: 10px 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-radius: 10px;
+    background-color: #0066FF;
+    color: white;
+    cursor: pointer;
+    height: 150px;
+}
+
+.menu-main-row .menu-main-item h2 {
+    font-size: 200%;
+    font-weight: bold;
+}
+
+.menu-main-row .menu-main-item p {
+    color: #0066FF;
+}
+
+table {
+    border-spacing: 0;
+    text-align: left;
+    position: relative;
+    max-width: 900px;
+}
+
+table td, th {
+    border: 1px solid black;
+    padding: 6px 6px;
+}
+
+table td[attribute="-"] {
+    border-right: 10px solid red;
+}
+table td[attribute="+"] {
+    border-right: 10px solid green;
+}
+
+table td[attribute="att3"] {
+    border-right: 10px solid orange;
+}
+table td[attribute="att10"] {
+    border-right: 10px solid green;
+}
+
+select {
+    border: 1px solid white;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.redBorder {
+    border-right: 10px solid red;
+}
+
+.orangeBorder {
+    border-right: 10px solid orange;
+}
+
+.greenBorder {
+    border-right: 10px solid green;
+}
+
+.row {
+    margin-top: 100px;
+}
+
+.hntsm table {
+    display: inline-block;
+    padding-left: 20px;
+}
+
+.app.hntsm {
+    margin-left: 10%;
+}
