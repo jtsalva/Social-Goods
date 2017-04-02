@@ -3339,8 +3339,6 @@ for (var x = 0; x < loadfile.transactions.length * 0.5; x++) {
      use + "</td><td>" + desc + "</td><td>" + cost + "</td></tr>");
 }
 
-var rank = loadfile.transactions.length * 0.5;
-
 var habits = {
     "Health": 0,
     "Restaurants": 0,
@@ -3356,20 +3354,18 @@ var habits = {
     "Cash": 0
 };
 
-var usedCategories = [];
-
 for (var x = 0; x < loadfile.transactions.length * 0.5; x++) {
+    console.log("aaaa");
     var category = categories[randomNumberFromRange(0, categories.length - 1)];
     var count = randomNumberFromRange(3, 13);
+    var date = loadfile.transactions[x].details.posted.substr(0, 10);
 
-    // if (usedCategories.)
+    console.log(date);
 
     habits[category] += count;
     
     $("#analysis").append("<tr><td>" +
-     rank + "</td><td>" + category + "</td><td>" + count + "</td></tr>");
-
-    rank--;
+    date + "</td><td>" + category + "</td><td>" + count + "</td></tr>");
 }
 
 var sort = [];
@@ -3397,10 +3393,10 @@ items.sort(function(first, second) {
 
 var sortedItems = items.slice(0, habits.length);
 
+
 console.log(sortedItems);
 console.log(sortedItems[0][0]);
 
-//var a = {};
 var label = [];
 var total = [];
 var data = [];
@@ -3409,7 +3405,6 @@ sortedItems.forEach(function(element) {
     $("#habits").append("<tr><td>" +
     element[0] + "</td><td>" +
     element[1] + "</td></tr>");
-    //a[element[0]] = element[1];
     data.push({
         "label": element[0],
         "total": element[1]
