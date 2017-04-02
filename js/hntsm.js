@@ -3400,29 +3400,34 @@ var sortedItems = items.slice(0, habits.length);
 console.log(sortedItems);
 console.log(sortedItems[0][0]);
 
-var a = {};
+//var a = {};
+var label = [];
+var total = [];
+var data = [];
 
 sortedItems.forEach(function(element) {
     $("#habits").append("<tr><td>" +
     element[0] + "</td><td>" +
     element[1] + "</td></tr>");
-    a[element[0]] = element[1];
-
+    //a[element[0]] = element[1];
+    data.push({
+        "label": element[0],
+        "total": element[1]
+    });
 }, this);
 
-console.log(JSON.stringify(a));
+// console.log(JSON.stringify(a));
 
-var json_array = JSON.stringify(a);
-for (i=0; i < 20; i++) {
-    data = json_array[i];
-    console.log(json_array[i]);
-}
-var label = [];
-var total = [];
-for(var j in data) {
+// var json_array = JSON.stringify(a);
+// for (i=0; i < 20; i++) {
+//     data = json_array[i];
+//     console.log(json_array[i]);
+// }
+
+for(var j = 0; j < data.length; j++) {
     label.push(data[j].label);
     total.push(data[j].total);
-    console.log(label[i]);
+    console.log(label[j]);
 }
 
 var ctx = document.getElementById('mycanvas');
