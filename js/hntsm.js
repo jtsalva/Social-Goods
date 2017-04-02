@@ -3416,14 +3416,6 @@ sortedItems.forEach(function(element) {
     });
 }, this);
 
-// console.log(JSON.stringify(a));
-
-// var json_array = JSON.stringify(a);
-// for (i=0; i < 20; i++) {
-//     data = json_array[i];
-//     console.log(json_array[i]);
-// }
-
 for(var j = 0; j < data.length; j++) {
     label.push(data[j].label);
     total.push(data[j].total);
@@ -3437,8 +3429,30 @@ var mycanvas = new Chart(ctx, {
         data: {
         labels: label,
         datasets: [{
-            backgroundColor: ['rgba(255, 0, 0, 0.2)', 'rgba(255, 110, 0, 0.2)', 'rgba(255, 225, 0, 0.2)', 'rgba(100, 200, 35, 0.2)', 'rgba(50, 185, 255, 0.2)', 'rgba(200, 75, 255, 0.2)'],
-            borderColor: ['rgba(255, 0, 0, 1)', 'rgba(255, 110, 0, 1)', 'rgba(255, 225, 0, 1)', 'rgba(100, 200, 35, 1)', 'rgba(50, 185, 255, 1)', 'rgba(200, 75, 255, 1)'],
+            backgroundColor: [  'rgba(176, 23, 31, 0.2)',
+                                'rgba(255, 62, 150, 0.2)',
+                                'rgba(75, 0, 130, 0.2)',
+                                'rgba(100, 200, 35, 0.2)',
+                                'rgba(0, 0, 255, 0.2)',
+                                'rgba(28, 134, 238, 0.2)',
+                                'rgba(0, 191, 255, 0.2)',
+                                'rgba(0, 201, 87, 0.2)',
+                                'rgba(255, 255, 0, 0.2)',
+                                'rgba(238, 134, 0, 0.2)',
+                                'rgba(139, 69, 19, 0.2)',
+                                'rgba(139, 62, 47, 0.2)'],
+            borderColor: ['rgba(176, 23, 31, 1)',
+                            'rgba(255, 62, 150, 1)',
+                            'rgba(75, 0, 130, 1)',
+                            'rgba(100, 200, 35, 1)',
+                            'rgba(0, 0, 255, 1)',
+                            'rgba(28, 134, 238, 1)',
+                            'rgba(0, 191, 255, 1)',
+                            'rgba(0, 201, 87, 1)',
+                            'rgba(255, 255, 0, 1)',
+                            'rgba(238, 134, 0, 1)',
+                            'rgba(139, 69, 19, 1)',
+                            'rgba(139, 62, 47, 1)'],
             borderWidth: 1,
             data: total
         }]},
