@@ -3411,3 +3411,33 @@ sortedItems.forEach(function(element) {
 }, this);
 
 console.log(JSON.stringify(a));
+
+var json_array = JSON.stringify(a);
+for (i=0; i < 20; i++) {
+    data = json_array[i];
+    console.log(json_array[i]);
+}
+var label = [];
+var total = [];
+for(var j in data) {
+    label.push(data[j].label);
+    total.push(data[j].total);
+    console.log(label[i]);
+}
+
+var ctx = document.getElementById('mycanvas');
+var mycanvas = new Chart(ctx, {
+    label: 'category',
+    type: 'pie',
+        data: {
+        labels: label,
+        datasets: [{
+            backgroundColor: ['rgba(255, 0, 0, 0.2)', 'rgba(255, 110, 0, 0.2)', 'rgba(255, 225, 0, 0.2)', 'rgba(100, 200, 35, 0.2)', 'rgba(50, 185, 255, 0.2)', 'rgba(200, 75, 255, 0.2)'],
+            borderColor: ['rgba(255, 0, 0, 1)', 'rgba(255, 110, 0, 1)', 'rgba(255, 225, 0, 1)', 'rgba(100, 200, 35, 1)', 'rgba(50, 185, 255, 1)', 'rgba(200, 75, 255, 1)'],
+            borderWidth: 1,
+            data: total
+        }]},
+        options: {
+            responsive: false,
+        }
+    });
