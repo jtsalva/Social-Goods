@@ -3356,9 +3356,13 @@ var habits = {
     "Cash": 0
 };
 
+var usedCategories = [];
+
 for (var x = 0; x < loadfile.transactions.length * 0.5; x++) {
     var category = categories[randomNumberFromRange(0, categories.length - 1)];
     var count = randomNumberFromRange(3, 13);
+
+    // if (usedCategories.)
 
     habits[category] += count;
     
@@ -3396,8 +3400,14 @@ var sortedItems = items.slice(0, habits.length);
 console.log(sortedItems);
 console.log(sortedItems[0][0]);
 
+var a = {};
+
 sortedItems.forEach(function(element) {
     $("#habits").append("<tr><td>" +
     element[0] + "</td><td>" +
     element[1] + "</td></tr>");
+    a[element[0]] = element[1];
+
 }, this);
+
+console.log(JSON.stringify(a));
